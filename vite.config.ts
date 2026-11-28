@@ -18,6 +18,8 @@ export default defineConfig(async ({ mode }) => {
   }
 
   return {
+    // Relative base so the build works under https://<user>.github.io/<repo>/
+    base: './',
     plugins,
     envPrefix: ['VITE_', 'NEXT_PUBLIC_'],
     define: processEnvDefines,
