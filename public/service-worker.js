@@ -1,5 +1,5 @@
 const CACHE_NAME = 'calc-plus-v1';
-const CORE_ASSETS = ['/', '/manifest.json', '/icon-192.png', '/icon-512.png', '/favicon.svg'];
+const CORE_ASSETS = ['./', './manifest.json', './icon-192.png', './icon-512.png', './favicon.svg'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -36,6 +36,6 @@ self.addEventListener('fetch', (event) => {
         }
         return res;
       })
-      .catch(() => caches.match(req).then((cached) => cached || caches.match('/')))
+      .catch(() => caches.match(req).then((cached) => cached || caches.match('./')))
   );
 });

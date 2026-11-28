@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { SettingsProvider } from './contexts/SettingsContext';
 import Layout from './components/Layout';
 import StandardCalculator from './pages/StandardCalculator';
@@ -12,7 +12,7 @@ import SettingsPage from './pages/SettingsPage';
 function App() {
   return (
     <SettingsProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<StandardCalculator />} />
@@ -24,7 +24,7 @@ function App() {
             <Route path="/settings" element={<SettingsPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </SettingsProvider>
   );
 }
